@@ -21,7 +21,6 @@ def timed(func):
 @api.route('/hello')
 class Hello(Resource):
 
-    @timed
     def get(self):
         return {'message': 'Hello World!'}
 
@@ -31,8 +30,8 @@ class EstimatePiNumpy(Resource):
 
     @timed
     def get(self, n: int):
-        return {'estimated_pi': 4 * ((np.random.uniform(size=n) ** 2
-                                      + np.random.uniform(size=n) ** 2) < 1).mean()}
+        return {'estimatedPi': 4 * ((np.random.uniform(size=n) ** 2
+                                     + np.random.uniform(size=n) ** 2) < 1).mean()}
 
 
 @api.route('/estimate-pi/<int:n>')
@@ -40,7 +39,8 @@ class EstimatePi(Resource):
 
     @timed
     def get(self, n: int):
-        return {'estimated_pi': 4 * sum(random() ** 2 + random() ** 2 < 1 for _ in range(n)) / n}
+        return {'estimatedPi': sum(4 if random() ** 2 + random() ** 2 < 1 else 0
+                                   for _ in range(n)) / n}
 
 
 def main():
