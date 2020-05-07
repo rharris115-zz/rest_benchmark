@@ -30,6 +30,8 @@ class EstimatePiNumpy(Resource):
 
     @timed
     def get(self, n: int):
+        # Estimate Pi by sampling uniformly distributed points in the unit square. The fraction that are at most 1 from
+        # the origin will roughly equal Pi / 4.
         return {'estimatedPi': 4 * ((np.random.uniform(size=n) ** 2
                                      + np.random.uniform(size=n) ** 2) < 1).mean()}
 
@@ -39,6 +41,8 @@ class EstimatePi(Resource):
 
     @timed
     def get(self, n: int):
+        # Estimate Pi by sampling uniformly distributed points in the unit square. The fraction that are at most 1 from
+        # the origin will roughly equal Pi / 4.
         return {'estimatedPi': sum(4 if random() ** 2 + random() ** 2 < 1 else 0
                                    for _ in range(n)) / n}
 
