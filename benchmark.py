@@ -31,9 +31,8 @@ class EstimatePiNumpy(Resource):
 
     @timed
     def get(self, n: int):
-        inside_unit_circle = ((np.random.uniform(size=n) ** 2
-                               + np.random.uniform(size=n) ** 2) < 1).sum()
-        return {'estimated_pi': 4 * inside_unit_circle / n}
+        return {'estimated_pi': 4 * ((np.random.uniform(size=n) ** 2
+                                      + np.random.uniform(size=n) ** 2) < 1).mean()}
 
 
 @api.route('/estimate-pi/<int:n>')
@@ -41,8 +40,7 @@ class EstimatePi(Resource):
 
     @timed
     def get(self, n: int):
-        inside_unit_circle = sum(1 if random() ** 2 + random() ** 2 < 1 else 0 for i in range(n))
-        return {'estimated_pi': 4 * inside_unit_circle / n}
+        return {'estimated_pi': 4 * sum(random() ** 2 + random() ** 2 < 1 for _ in range(n)) / n}
 
 
 def main():
