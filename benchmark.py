@@ -48,7 +48,10 @@ class EstimatePi(Resource):
 
 
 def main():
-    app.run()
+    import logging
+    log = logging.getLogger('werkzeug')
+    log.setLevel(logging.ERROR)
+    app.run(host="0.0.0.0")
 
 
 if __name__ == "__main__":
