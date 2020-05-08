@@ -2,7 +2,7 @@ from flask import Flask
 from flask_restplus import Api, Resource
 import numpy as np
 from random import random
-from time import time
+from time import time, sleep
 
 app = Flask(__name__)
 api = Api(app=app)
@@ -23,6 +23,15 @@ class Hello(Resource):
 
     def get(self):
         return {'message': 'Hello World!'}
+
+
+@api.route('/sleep/<float:t>')
+class Sleep(Resource):
+
+    @timed
+    def get(self, t: float):
+        sleep(t)
+        return {'slept': t}
 
 
 @api.route('/estimate-pi-np/<int:n>')
