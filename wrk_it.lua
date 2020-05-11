@@ -1,0 +1,10 @@
+done = function(summary, latency, requests)
+    io.write('path:')
+    io.write(wrk.path .. ',')
+    io.write(summary.requests .. ',')
+    io.write(summary.errors.connect .. ',')
+    io.write(summary.errors.read .. ',')
+    io.write(summary.errors.write .. ',')
+    io.write(summary.errors.status .. ',')
+    io.write(summary.errors.timeout .. '\n')
+end

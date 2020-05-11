@@ -1,0 +1,274 @@
+Path:
+/hello
+
+Example Output:
+curl http://192.168.0.10:8000/hello
+{"message": "Hello World!"}
+
+Wrk Report:
+Running 1m test @ http://192.168.0.10:8000/hello
+  2 threads and 40 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   182.25ms  239.70ms   1.31s    81.81%
+    Req/Sec   516.00    219.49     1.08k    68.63%
+  60851 requests in 1.00m, 10.74MB read
+Requests/sec:   1013.23
+Transfer/sec:    183.06KB
+path:/hello,60851,0,0,0,0,0
+
+
+Path:
+/sleep/0.1
+
+Example Output:
+curl http://192.168.0.10:8000/sleep/0.1
+{"slept": 0.1, "elapsed": 0.10208773612976074}
+
+Wrk Report:
+Running 1m test @ http://192.168.0.10:8000/sleep/0.1
+  2 threads and 40 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   104.87ms    2.81ms 164.36ms   87.01%
+    Req/Sec   191.41     10.43   202.00     81.54%
+  22880 requests in 1.00m, 4.45MB read
+Requests/sec:    380.90
+Transfer/sec:     75.83KB
+path:/sleep/0.1,22880,0,0,0,0,0
+
+
+Path:
+/sleep/0.5
+
+Example Output:
+curl http://192.168.0.10:8000/sleep/0.5
+{"slept": 0.5, "elapsed": 0.5021078586578369}
+
+Wrk Report:
+Running 1m test @ http://192.168.0.10:8000/sleep/0.5
+  2 threads and 40 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   504.86ms    5.89ms 592.41ms   97.66%
+    Req/Sec    52.64     42.42   184.00     76.62%
+  4741 requests in 1.00m, 0.92MB read
+Requests/sec:     78.89
+Transfer/sec:     15.63KB
+path:/sleep/0.5,4741,0,0,0,0,0
+
+
+Path:
+/sleep/1.0
+
+Example Output:
+curl http://192.168.0.10:8000/sleep/1.0
+{"slept": 1.0, "elapsed": 1.002074956893921}
+
+Wrk Report:
+Running 1m test @ http://192.168.0.10:8000/sleep/1.0
+  2 threads and 40 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.00s     3.76ms   1.05s    97.50%
+    Req/Sec    37.77     43.72   182.00     85.12%
+  2360 requests in 1.00m, 467.25KB read
+Requests/sec:     39.27
+Transfer/sec:      7.77KB
+path:/sleep/1.0,2360,0,0,0,0,0
+
+
+Path:
+/estimate-pi/100
+
+Example Output:
+curl http://192.168.0.10:8000/estimate-pi/100
+{"estimatedPi": 3.04, "elapsed": 8.606910705566406e-05}
+
+Wrk Report:
+Running 1m test @ http://192.168.0.10:8000/estimate-pi/100
+  2 threads and 40 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   278.69ms  380.29ms   1.98s    82.62%
+    Req/Sec   481.52    229.65     0.94k    65.41%
+  54383 requests in 1.00m, 11.04MB read
+Requests/sec:    905.99
+Transfer/sec:    188.27KB
+path:/estimate-pi/100,54383,0,0,0,0,0
+
+
+Path:
+/estimate-pi/1000
+
+Example Output:
+curl http://192.168.0.10:8000/estimate-pi/1000
+{"estimatedPi": 3.12, "elapsed": 0.000698089599609375}
+
+Wrk Report:
+Running 1m test @ http://192.168.0.10:8000/estimate-pi/1000
+  2 threads and 40 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   236.98ms  409.22ms   2.00s    84.28%
+    Req/Sec   352.49    132.81   730.00     68.21%
+  41914 requests in 1.00m, 8.54MB read
+  Socket errors: connect 0, read 85, write 0, timeout 230
+Requests/sec:    697.54
+Transfer/sec:    145.49KB
+path:/estimate-pi/1000,41914,0,85,0,0,230
+
+
+Path:
+/estimate-pi/10000
+
+Example Output:
+curl http://192.168.0.10:8000/estimate-pi/10000
+{"estimatedPi": 3.1508, "elapsed": 0.007009029388427734}
+
+Wrk Report:
+Running 1m test @ http://192.168.0.10:8000/estimate-pi/10000
+  2 threads and 40 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   236.92ms  377.17ms   2.00s    84.88%
+    Req/Sec   114.12     44.42   242.00     67.18%
+  13482 requests in 1.00m, 2.75MB read
+  Socket errors: connect 0, read 69, write 0, timeout 196
+Requests/sec:    224.52
+Transfer/sec:     46.83KB
+path:/estimate-pi/10000,13482,0,69,0,0,196
+
+
+Path:
+/estimate-pi/100000
+
+Example Output:
+curl http://192.168.0.10:8000/estimate-pi/100000
+{"estimatedPi": 3.14644, "elapsed": 0.06346607208251953}
+
+Wrk Report:
+Running 1m test @ http://192.168.0.10:8000/estimate-pi/100000
+  2 threads and 40 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   210.20ms  256.42ms   2.00s    95.26%
+    Req/Sec    16.27      8.56    40.00     75.18%
+  1784 requests in 1.00m, 372.04KB read
+  Socket errors: connect 0, read 91, write 0, timeout 244
+Requests/sec:     29.69
+Transfer/sec:      6.19KB
+path:/estimate-pi/100000,1784,0,91,0,0,244
+
+
+Path:
+/estimate-pi/1000000
+
+Example Output:
+curl http://192.168.0.10:8000/estimate-pi/1000000
+{"estimatedPi": 3.141424, "elapsed": 0.6214132308959961}
+
+Wrk Report:
+Running 1m test @ http://192.168.0.10:8000/estimate-pi/1000000
+  2 threads and 40 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   990.73ms  337.87ms   1.94s    61.02%
+    Req/Sec     1.91      1.94    10.00     85.63%
+  181 requests in 1.00m, 37.75KB read
+  Socket errors: connect 0, read 42, write 0, timeout 63
+Requests/sec:      3.01
+Transfer/sec:     643.42B
+path:/estimate-pi/1000000,181,0,42,0,0,63
+
+
+Path:
+/estimate-pi-np/100
+
+Example Output:
+curl http://192.168.0.10:8000/estimate-pi-np/100
+{"estimatedPi": 3.2, "elapsed": 0.0003848075866699219}
+
+Wrk Report:
+Running 1m test @ http://192.168.0.10:8000/estimate-pi-np/100
+  2 threads and 40 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   259.13ms  355.99ms   1.99s    82.68%
+    Req/Sec   431.84    193.44     0.87k    66.72%
+  50834 requests in 1.00m, 10.34MB read
+  Socket errors: connect 0, read 0, write 0, timeout 8
+Requests/sec:    846.33
+Transfer/sec:    176.28KB
+path:/estimate-pi-np/100,50834,0,0,0,0,8
+
+
+Path:
+/estimate-pi-np/1000
+
+Example Output:
+curl http://192.168.0.10:8000/estimate-pi-np/1000
+{"estimatedPi": 3.096, "elapsed": 0.0002491474151611328}
+
+Wrk Report:
+Running 1m test @ http://192.168.0.10:8000/estimate-pi-np/1000
+  2 threads and 40 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   236.67ms  308.59ms   1.70s    81.13%
+    Req/Sec   424.53    201.17     0.86k    64.17%
+  49357 requests in 1.00m, 10.08MB read
+Requests/sec:    821.73
+Transfer/sec:    171.90KB
+path:/estimate-pi-np/1000,49357,0,0,0,0,0
+
+
+Path:
+/estimate-pi-np/10000
+
+Example Output:
+curl http://192.168.0.10:8000/estimate-pi-np/10000
+{"estimatedPi": 3.124, "elapsed": 0.0008099079132080078}
+
+Wrk Report:
+Running 1m test @ http://192.168.0.10:8000/estimate-pi-np/10000
+  2 threads and 40 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   313.74ms  414.18ms   1.98s    81.53%
+    Req/Sec   339.48    156.12   720.00     67.11%
+  38680 requests in 1.00m, 7.92MB read
+  Socket errors: connect 0, read 0, write 0, timeout 7
+Requests/sec:    643.73
+Transfer/sec:    134.93KB
+path:/estimate-pi-np/10000,38680,0,0,0,0,7
+
+
+Path:
+/estimate-pi-np/100000
+
+Example Output:
+curl http://192.168.0.10:8000/estimate-pi-np/100000
+{"estimatedPi": 3.12972, "elapsed": 0.00938105583190918}
+
+Wrk Report:
+Running 1m test @ http://192.168.0.10:8000/estimate-pi-np/100000
+  2 threads and 40 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   170.75ms  365.43ms   1.99s    87.60%
+    Req/Sec   105.59     40.07   222.00     69.19%
+  12505 requests in 1.00m, 2.56MB read
+  Socket errors: connect 0, read 126, write 0, timeout 342
+Requests/sec:    208.19
+Transfer/sec:     43.61KB
+path:/estimate-pi-np/100000,12505,0,126,0,0,342
+
+
+Path:
+/estimate-pi-np/1000000
+
+Example Output:
+curl http://192.168.0.10:8000/estimate-pi-np/1000000
+{"estimatedPi": 3.1395, "elapsed": 0.08577489852905273}
+
+Wrk Report:
+Running 1m test @ http://192.168.0.10:8000/estimate-pi-np/1000000
+  2 threads and 40 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency   232.63ms  278.25ms   1.89s    92.86%
+    Req/Sec    13.39      7.67    40.00     80.64%
+  1384 requests in 1.00m, 289.90KB read
+  Socket errors: connect 0, read 75, write 0, timeout 179
+Requests/sec:     23.03
+Transfer/sec:      4.82KB
+path:/estimate-pi-np/1000000,1384,0,75,0,0,179
+
+
