@@ -41,7 +41,8 @@ The default development service of Flask was used with default settings and debu
 ## Python Flask and Gunicorn
 Gunicorn was run with a variety of settings.
 - A single `sync` worker.
-- `(2 * N(core)) + 1 = 5` `sync` workers with two threads each.
+- `(2 * N(core)) + 1 = 5` `sync` workers with 2 threads each.
+- `(2 * N(core)) + 1 = 5` `sync` workers with 4 threads each.
 - `(2 * N(core)) + 1 = 5` `gevent` workers.
 - `(2 * N(core)) + 1 = 5` `eventlet` workers.
 # End Points
