@@ -11,15 +11,15 @@ async def _hello():
 
 
 @app.get('/sleep/{t}')
-def _snore(t: float = Path(..., title='The number of seconds to sleep.')):
+async def _snore(t: float = Path(..., title='The number of seconds to sleep.')):
     return snore(t=t)
 
 
 @app.get('/estimate-pi-np/{n}')
-def _np_estimate_pi(n: int = Path(..., title='The size of the sample from which to estimate pi.')):
+async def _np_estimate_pi(n: int = Path(..., title='The size of the sample from which to estimate pi.')):
     return np_estimate_pi(n=n)
 
 
 @app.get('/estimate-pi/{n}')
-def _estimate_pi(n: int = Path(..., title='The size of the sample from which to estimate pi.')):
+async def _estimate_pi(n: int = Path(..., title='The size of the sample from which to estimate pi.')):
     return estimate_pi(n=n)
