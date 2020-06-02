@@ -114,3 +114,5 @@ def get(self, n: int):
     return {'estimatedPi': 4 * ((np.random.uniform(size=n) ** 2
                                  + np.random.uniform(size=n) ** 2) < 1).mean()}
 ```
+# Results
+## 10 Connections
